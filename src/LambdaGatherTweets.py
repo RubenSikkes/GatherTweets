@@ -22,7 +22,7 @@ yesterday = datetime.now() - timedelta(days=1)
 start = yesterday.strftime('%Y-%m-%d')
 until = datetime.now().strftime('%Y-%m-%d')
 
-query = "gtst since:{} until:{}".format(start, until)
+query = "dwdd since:{} until:{}".format(start, until)
 print("Our Query: ", query)
 
 
@@ -48,7 +48,7 @@ def lambda_handler(event, context):
                              'id': tweet.id
 
                              }
-            path_name = 'raw/sources/socialmedia_gtst/twitter/{}/{}/{}/'.format(yesterday.year, yesterday.month,
+            path_name = 'path/{}/{}/{}/'.format(yesterday.year, yesterday.month,
                                                                                 yesterday.day)
             object_name = "twitter_{}.json".format(current_tweet['id'])
             s3 = boto3.resource("s3")
