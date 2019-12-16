@@ -37,7 +37,7 @@ def del_profile_nonsense(dic):
 
 def lambda_handler(event, context):
     try:
-        bucket_name = "esg-datahub"
+        bucket_name = ""
         s3 = boto3.resource("s3")
         # Gather Tweets
         for tweet in tweepy.Cursor(api.search, q=query, rpp=100, include_entities=True, lang='nl').items():
