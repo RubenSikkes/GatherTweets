@@ -4,6 +4,7 @@ import time
 import json
 
 def set_tweepy_auth(file_location):
+    # To authenticate tweepy
     with open(file_location, 'r') as f:
         data = json.load(f)
     auth = tweepy.OAuthHandler(data['consumer_key'], data['consumer_secret'])
